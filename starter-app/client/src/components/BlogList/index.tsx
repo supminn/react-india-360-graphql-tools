@@ -17,7 +17,7 @@ const BlogList = () => {
 
   return (
     <div>
-      {data.blogs.map(({ id, title, author, content }) => (
+      {data.blogs.map(({ id, title, author, content }: any) => (
         <Link to={`blog/${id}`}>
           <BlogContainer key={id}>
             <BlogTitle>{title}</BlogTitle>

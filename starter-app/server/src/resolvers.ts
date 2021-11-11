@@ -1,6 +1,6 @@
-const { blogs } = require("./blogs");
+import { blogs } from "./blogs"
 
-const resolvers = {
+export const resolvers = {
   Query: {
     blogs: () => blogs,
     blog: (parent, args, context, info) => {
@@ -8,5 +8,3 @@ const resolvers = {
     },
   },
 };
-
-module.exports = { resolvers };

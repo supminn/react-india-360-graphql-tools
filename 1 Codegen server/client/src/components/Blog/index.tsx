@@ -7,7 +7,7 @@ import {
   BlogContent,
   BlogTitle,
 } from "../CommonComponents";
-import { getBlogById } from "./getBlogById.query";
+import { getBlogById } from "./getBlogById.graphql";
 
 const Blog = () => {
   const { blogId } = useParams();

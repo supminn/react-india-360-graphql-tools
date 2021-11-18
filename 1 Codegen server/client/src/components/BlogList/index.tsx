@@ -7,7 +7,7 @@ import {
   BlogTitle,
   BlogContent,
 } from "../CommonComponents";
-import { getAllBlogs } from "./getAllBlogs.query";
+import { getAllBlogs } from "./getAllBlogs.graphql";
 
 const BlogList = () => {
   const { data, error, loading } = useQuery(getAllBlogs);

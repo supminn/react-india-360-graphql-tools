@@ -1,5 +1,5 @@
 import { blogs } from "./blogs";
-import { Resolvers } from "./generated/graphql";
+import { Resolvers } from "../generated/graphql";
 
 export const resolvers: Resolvers = {
   Query: {

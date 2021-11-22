@@ -15,6 +15,13 @@ export type Scalars = {
   Float: number;
 };
 
+export type Author = {
+  __typename?: 'Author';
+  description: Scalars['String'];
+  id: Scalars['ID'];
+  name: Scalars['String'];
+};
+
 export type Blog = {
   __typename?: 'Blog';
   author: Scalars['String'];
@@ -25,8 +32,15 @@ export type Blog = {
 
 export type Query = {
   __typename?: 'Query';
+  author?: Maybe<Author>;
+  authors?: Maybe<Array<Maybe<Author>>>;
   blog?: Maybe<Blog>;
   blogs?: Maybe<Array<Maybe<Blog>>>;
+};
+
+
+export type QueryAuthorArgs = {
+  id: Scalars['ID'];
 };
 
 

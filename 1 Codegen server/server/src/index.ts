@@ -1,8 +1,13 @@
-import { ApolloServer } from "apollo-server"
-import { typeDefs } from "./typeDefs"
-import { resolvers } from "./resolvers"
+import { createApplication } from "graphql-modules";
+import { ApolloServer } from "apollo-server";
+import { blogModule } from "./blog/";
+import { authorModule } from "./author";
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const app = createApplication({
+  modules: [blogModule, authorModule],
+});
+const schema = app.createSchemaForApollo();
+const server = new ApolloServer({ schema });
 
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
